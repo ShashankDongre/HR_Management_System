@@ -5,21 +5,19 @@
 package model;
 
 
-
-
 public class Employee {
     
-    private String name;
-    private String empid;
-    private String age;
-    private String gender;
-    private String startDate;
-    private String level;
-    private String teamInfo;
-    private String positionTitle;
-    private String cellphoneNum;
-    private String email;
-    private String photo;
+   private String name;
+   private String employeeId;
+   private double age;
+   private String gender;
+   private String startDate;
+   private String level;
+   private String teamInfo;
+   private String positionTitle;
+   private String cellPhoneNumber;
+   private String emailAddress;
+   private String photo;
 
     public String getName() {
         return name;
@@ -29,19 +27,19 @@ public class Employee {
         this.name = name;
     }
 
-    public String getEmpid() {
-        return empid;
+    public String getEmployeeId() {
+        return employeeId;
     }
 
-    public void setEmpid(String empid) {
-        this.empid = empid;
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
     }
 
-    public String getAge() {
+    public double getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -85,20 +83,20 @@ public class Employee {
         this.positionTitle = positionTitle;
     }
 
-    public String getCellphoneNum() {
-        return cellphoneNum;
+    public String getCellPhoneNumber() {
+        return cellPhoneNumber;
     }
 
-    public void setCellphoneNum(String cellphoneNum) {
-        this.cellphoneNum = cellphoneNum;
+    public void setCellPhoneNumber(String cellPhoneNumber) {
+        this.cellPhoneNumber = cellPhoneNumber;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmailAddress() {
+        return emailAddress;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
     }
 
     public String getPhoto() {
@@ -108,10 +106,11 @@ public class Employee {
     public void setPhoto(String photo) {
         this.photo = photo;
     }
+   
+    @Override
+    public String toString(){
+     return name;
     
-    
-    
-    
-    
+}
     
 }
