@@ -5,6 +5,7 @@
 package ui;
 
 import model.Employee;
+import model.EmployeeHistory;
 
 
 public class MainJFrame extends javax.swing.JFrame {
@@ -14,10 +15,14 @@ public class MainJFrame extends javax.swing.JFrame {
      */
     
     Employee employee;
+    EmployeeHistory history;
+    
+    
     
     public MainJFrame() {
         initComponents();
         
+        history = new EmployeeHistory();
         employee = new Employee();
         
     }
@@ -31,116 +36,136 @@ public class MainJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        splitpane = new javax.swing.JSplitPane();
+        splitPane = new javax.swing.JSplitPane();
         controlPanel = new javax.swing.JPanel();
-        Create = new javax.swing.JButton();
-        View = new javax.swing.JButton();
-        Update = new javax.swing.JButton();
-        Delete = new javax.swing.JButton();
+        btnCreate = new javax.swing.JButton();
+        btnView = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Create.setText("Create");
-        Create.addActionListener(new java.awt.event.ActionListener() {
+        btnCreate.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
+        btnCreate.setText("Create");
+        btnCreate.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CreateActionPerformed(evt);
+                btnCreateActionPerformed(evt);
             }
         });
 
-        View.setText("View");
-        View.addActionListener(new java.awt.event.ActionListener() {
+        btnView.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
+        btnView.setText("View");
+        btnView.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ViewActionPerformed(evt);
-            }
-        });
-        View.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                ViewPropertyChange(evt);
+                btnViewActionPerformed(evt);
             }
         });
 
-        Update.setText("Update");
+        btnUpdate.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
+        btnUpdate.setText("Update");
+        btnUpdate.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
 
-        Delete.setText("Delete");
+        btnDelete.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
+        btnDelete.setText("Delete");
 
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Update)
-                    .addComponent(Create)
-                    .addComponent(View)
-                    .addComponent(Delete))
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnView))
+                    .addGroup(controlPanelLayout.createSequentialGroup()
+                        .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCreate)
+                            .addComponent(btnUpdate)
+                            .addComponent(btnDelete))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
-        controlPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {Create, Delete, Update, View});
+        controlPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCreate, btnDelete, btnUpdate, btnView});
 
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addComponent(Create)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(View)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Update)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Delete)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addGap(157, 157, 157)
+                .addComponent(btnCreate)
+                .addGap(41, 41, 41)
+                .addComponent(btnView)
+                .addGap(47, 47, 47)
+                .addComponent(btnUpdate)
+                .addGap(41, 41, 41)
+                .addComponent(btnDelete)
+                .addContainerGap(251, Short.MAX_VALUE))
         );
 
-        controlPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {Create, Delete, Update, View});
+        controlPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCreate, btnDelete, btnUpdate, btnView});
 
-        splitpane.setLeftComponent(controlPanel);
+        splitPane.setLeftComponent(controlPanel);
 
         javax.swing.GroupLayout workAreaLayout = new javax.swing.GroupLayout(workArea);
         workArea.setLayout(workAreaLayout);
         workAreaLayout.setHorizontalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 292, Short.MAX_VALUE)
+            .addGap(0, 1013, Short.MAX_VALUE)
         );
         workAreaLayout.setVerticalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 665, Short.MAX_VALUE)
         );
 
-        splitpane.setRightComponent(workArea);
+        splitPane.setRightComponent(workArea);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(splitpane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(splitPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 6, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(splitpane, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(splitPane, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewActionPerformed
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
-        ViewJPanel viewPanel = new ViewJPanel(employee);
-        splitpane.setRightComponent(viewPanel);
+        CreateJPanel createPanel = new CreateJPanel(history);
+        splitPane.setRightComponent(createPanel);
         
+    }//GEN-LAST:event_btnCreateActionPerformed
+
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
+        // TODO add your handling code here:
+        ViewJPanel viewPanel = new ViewJPanel(history);
+        splitPane.setRightComponent(viewPanel);
         
-    }//GEN-LAST:event_ViewActionPerformed
+    }//GEN-LAST:event_btnViewActionPerformed
 
-    private void ViewPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_ViewPropertyChange
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ViewPropertyChange
-
-    private void CreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateActionPerformed
-        // TODO add your handling code here:
-        CreateJPanel createPanel = new CreateJPanel(employee);
-        splitpane.setRightComponent(createPanel);
-    }//GEN-LAST:event_CreateActionPerformed
+        UpdateJPanel updatePanel = new UpdateJPanel(employee);
+        splitPane.setRightComponent(updatePanel);
+        
+    }//GEN-LAST:event_btnUpdateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,12 +203,12 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Create;
-    private javax.swing.JButton Delete;
-    private javax.swing.JButton Update;
-    private javax.swing.JButton View;
+    private javax.swing.JButton btnCreate;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnUpdate;
+    private javax.swing.JButton btnView;
     private javax.swing.JPanel controlPanel;
-    private javax.swing.JSplitPane splitpane;
+    private javax.swing.JSplitPane splitPane;
     private javax.swing.JPanel workArea;
     // End of variables declaration//GEN-END:variables
 }
