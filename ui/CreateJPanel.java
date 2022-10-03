@@ -313,7 +313,7 @@ public class CreateJPanel extends javax.swing.JPanel {
 
         if (showOpenDialogue == JFileChooser.APPROVE_OPTION) {
             File selectedImageFile = browseImageFile.getSelectedFile();
-            String selectedProfilePhoto = selectedImageFile.getAbsolutePath();
+            selectedProfilePhoto = selectedImageFile.getAbsolutePath();
         }
 
     }//GEN-LAST:event_btnUploadPhotoActionPerformed
