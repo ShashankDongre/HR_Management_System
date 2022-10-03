@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package model;
 
 
@@ -9,7 +6,7 @@ public class Employee {
     
    private String name;
    private String employeeId;
-   private double age;
+   private String age;
    private String gender;
    private String startDate;
    private String level;
@@ -35,11 +32,11 @@ public class Employee {
         this.employeeId = employeeId;
     }
 
-    public double getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
