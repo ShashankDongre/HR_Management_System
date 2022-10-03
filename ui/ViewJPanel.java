@@ -363,10 +363,10 @@ public class ViewJPanel extends javax.swing.JPanel {
         txtCellphoneNumber.setText(selectedEmployee.getCellPhoneNumber());
         txtEmailAddress.setText(selectedEmployee.getEmailAddress());
         
-        ImageIcon ii = new ImageIcon(selectedEmployee.getPhoto());
-        Image image = ii.getImage().getScaledInstance(lblProfilePhoto.getWidth(),lblProfilePhoto.getHeight(), Image.SCALE_SMOOTH );
+        //ImageIcon ii = new ImageIcon(selectedEmployee.getPhoto());
+        //Image image = ii.getImage().getScaledInstance(lblProfilePhoto.getWidth(),lblProfilePhoto.getHeight(), Image.SCALE_SMOOTH );
         
-        lblProfilePhoto.setIcon(new ImageIcon(image));
+        //lblProfilePhoto.setIcon(new ImageIcon(image));
 
     }
 
